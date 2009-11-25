@@ -11,6 +11,10 @@ fail=0
 cd `dirname $0`
 . ../rake
 
+for cache in */.rake_tasks~; do
+    cp "$cache" "`dirname $cache`/.rake_tasks~~"
+done
+
 for test in */; do
     cd $test
     _rakecomplete
@@ -26,6 +30,12 @@ for test in */; do
     
     let "all += 1"
     cd ..
+done
+
+rm **/.rake_tasks~
+
+for cache in */.rake_tasks~~; do
+    mv "$cache" "`dirname $cache`/.rake_tasks~"
 done
 
 if [ $fail -eq 0 ]; then echo -en "$GOOD"; else echo -en "$BAD"; fi

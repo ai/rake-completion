@@ -1,0 +1,5 @@
+desc "Task in cache"
+task "in" do; end
+
+desc "Task out of cache"
+task "out" do; end
