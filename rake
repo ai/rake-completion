@@ -1,3 +1,4 @@
+#!/bin/bash
 # Bash completion support for Rake, Ruby Make.
 
 export COMP_WORDBREAKS=${COMP_WORDBREAKS/\:/}
