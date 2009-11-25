@@ -1,3 +1,9 @@
+rake-completion (0.1~railsppa1) karmic; urgency=low
+
+  * Add Ubuntu install instructions
+
+ -- Andrey Sitnik <andrey@sitnik.ru>  Wed, 25 Nov 2009 16:39:49 +0300
+
 rake-completion (0.1~railsppa0) karmic; urgency=low
 
   * Initial release
