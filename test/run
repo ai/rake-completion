@@ -25,13 +25,11 @@ for test in */; do
     cd $test
     _rakecomplete
     
-    tasks=`echo $(cat tasks)`
-    
-    if [ "`echo ${COMPREPLY[@]}`" = "$tasks" ]; then
+    if [ "`echo ${COMPREPLY[@]}`" = "`cat tasks`" ]; then
         echo -e "$GOOD* `cat description`$CLEAR"
     else
         echo -e "$BAD* `cat description`$CLEAR"
-        echo    "  expected: $tasks"
+        echo    "  expected: `cat tasks`"
         echo -e "       got: $BAD${COMPREPLY[@]}$CLEAR"
         let "fail += 1"
     fi
