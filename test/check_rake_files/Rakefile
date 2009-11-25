@@ -1,0 +1,4 @@
+desc "Task in main Rakefile"
+task "Rakefile" do; end
+
+load File.join(File.dirname(__FILE__), 'lib/include.rake')
