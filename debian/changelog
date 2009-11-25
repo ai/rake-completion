@@ -1,0 +1,5 @@
+rake-completion (0.1~railsppa0) karmic; urgency=low
+
+  * Initial release
+
+ -- Andrey Sitnik <andrey@sitnik.ru>  Wed, 25 Nov 2009 15:45:17 +0300
