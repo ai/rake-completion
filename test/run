@@ -1,0 +1,46 @@
+#!/bin/bash
+# Run all tests and print results.
+
+GOOD="\e[32m"
+BAD="\e[31m"
+CLEAR="\e[0m"
+
+all=0
+fail=0
+
+cd `dirname $0`
+. ../rake
+
+for test in */; do
+    cd $test
+    _rakecomplete
+    
+    if [ "`echo ${COMPREPLY[@]}`" = "`cat tasks`" ]; then
+        echo -e "$GOOD* `cat description`$CLEAR"
+    else
+        echo -e "$BAD* `cat description`$CLEAR"
+        echo    "  expected: `cat tasks`"
+        echo -e "       got: $BAD${COMPREPLY[@]}$CLEAR"
+        let "fail += 1"
+    fi
+    
+    let "all += 1"
+    cd ..
+done
+
+if [ $fail -eq 0 ]; then echo -en "$GOOD"; else echo -en "$BAD"; fi
+
+if [ $all -eq 1 ]; then
+    echo -n "  $all test,"
+else
+    echo -n "  $all tests,"
+fi
+
+if [ $fail -eq 0 ]; then
+    echo " no failures"
+    exit 0
+else
+    echo -n " $fail "
+    if [ $fail -eq 1 ]; then echo "failure"; else echo "failures"; fi
+    exit 1
+fi
