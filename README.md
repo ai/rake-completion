@@ -1,4 +1,4 @@
-# rake_completion
+# Rake Completion
 
 Bash completion support for Rake, Ruby Make.
 
