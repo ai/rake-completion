@@ -26,6 +26,10 @@ It cache tasks to `.rake_tasks~` and update it if it will be outdated.
 
 ### Other UNIX-like
 
+#### System
+Copy `rake` script to `/etc/bash_completion.d/`.
+
+#### User
 Copy `rake` script (for example, to `~/scripts/`) and add to your `.bashrc`:
 
     . ~/scripts/rake
