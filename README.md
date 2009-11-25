@@ -12,7 +12,7 @@ Bash completion support for Rake, Ruby Make.
 
 It cache tasks to `.rake_tasks~` and update it if it will be outdated.
 
-# Install
+## Install
 
 Copy `rake` script (for example, to `~/scripts/`) and add to your `.bashrc`:
 
