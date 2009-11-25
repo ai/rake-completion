@@ -1,0 +1,29 @@
+#!/usr/bin/make -f
+    
+build = $(CURDIR)/debian/rake-completion
+
+clean:
+	rm -f build
+    
+build:
+	touch build
+
+install:
+	dh_testdir
+	dh_testroot
+	dh_installdirs
+	dh_installdocs
+	
+	cp rake $(build)/etc/bash_completion.d/
+
+binary-indep: install
+
+binary-arch: install
+	dh_installdocs
+	dh_installchangelogs
+	dh_installdeb
+	dh_compress
+	dh_gencontrol
+	dh_builddeb
+
+binary: binary-indep binary-arch
