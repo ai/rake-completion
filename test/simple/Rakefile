@@ -1,0 +1,7 @@
+desc "First task"
+task "first" do; end
+
+desc "Second task"
+task "second" do; end
+
+task "hidden" do; end
