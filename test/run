@@ -15,15 +15,23 @@ for cache in */.rake_tasks~; do
     cp "$cache" "`dirname $cache`/.rake_tasks~~"
 done
 
+for fresher in */fresher; do
+    for file in `cat "$fresher"`; do
+        touch "`dirname $fresher`/$file"
+    done
+done
+
 for test in */; do
     cd $test
     _rakecomplete
     
-    if [ "`echo ${COMPREPLY[@]}`" = "`cat tasks`" ]; then
+    tasks=`echo $(cat tasks)`
+    
+    if [ "`echo ${COMPREPLY[@]}`" = "$tasks" ]; then
         echo -e "$GOOD* `cat description`$CLEAR"
     else
         echo -e "$BAD* `cat description`$CLEAR"
-        echo    "  expected: `cat tasks`"
+        echo    "  expected: $tasks"
         echo -e "       got: $BAD${COMPREPLY[@]}$CLEAR"
         let "fail += 1"
     fi
