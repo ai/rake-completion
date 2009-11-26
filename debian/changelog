@@ -1,3 +1,9 @@
+rake-completion (0.2~uorppa1) karmic; urgency=low
+
+  * Add comparison with Ubuntu rake completion to package description
+
+ -- Andrey Sitnik <andrey@sitnik.ru>  Thu, 26 Nov 2009 13:42:10 +0300
+
 rake-completion (0.2~railsppa0) karmic; urgency=low
 
   * Compatibility with completion from Ubuntu rake package
