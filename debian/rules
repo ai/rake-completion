@@ -14,7 +14,7 @@ install:
 	dh_installdirs
 	dh_installdocs
 	
-	cp rake $(build)/etc/bash_completion.d/
+	cp rake $(build)/etc/bash_completion.d/rake_cached
 
 binary-indep: install
 
