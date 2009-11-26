@@ -33,3 +33,11 @@ Copy `rake` script to `/etc/bash_completion.d/`.
 Copy `rake` script (for example, to `~/scripts/`) and add to your `.bashrc`:
 
     . ~/scripts/rake
+
+## Cache
+
+Tasks cache in `.rake_tasks~` will be update on changes in Rakefile or any
+`*.rake` files.
+
+To remove tasks cache (and another backup files) from Git repository add to
+`.gitignore`: `*~`.
