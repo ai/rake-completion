@@ -11,6 +11,7 @@ Bash completion support for Rake, Ruby Make.
      test:functionals  test:profile      test:units
 
 It cache tasks to `.rake_tasks~` and update it if it will be outdated.
+So it’s more faster, that default completion from Ubuntu rake.
 
 ## Install
 
