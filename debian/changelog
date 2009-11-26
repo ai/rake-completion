@@ -1,3 +1,10 @@
+rake-completion (0.2~railsppa0) karmic; urgency=low
+
+  * Compatibility with completion from Ubuntu rake package
+  * Add cache tips to documentation.
+
+ -- Andrey Sitnik <andrey@sitnik.ru>  Thu, 26 Nov 2009 13:16:10 +0300
+
 rake-completion (0.1~railsppa1) karmic; urgency=low
 
   * Add Ubuntu install instructions

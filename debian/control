@@ -3,7 +3,7 @@ Section: devel
 Priority: optional
 Maintainer: Andrey Sitnik <andrey@sitnik.ru>
 Build-Depends: debhelper (>= 7)
-Standards-Version: 0.1~railsppa1
+Standards-Version: 0.2~railsppa0
 Vcs-Git: git://github.com/ai/rake-completion.git
 Vcs-Browser: http://github.com/ai/rake-completion
 
