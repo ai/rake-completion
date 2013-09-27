@@ -4,8 +4,9 @@
 export COMP_WORDBREAKS=${COMP_WORDBREAKS/\:/}
 
 _rakecomplete() {
-    if [ -f Rakefile ]; then
-        recent=`ls -t .rake_tasks~ Rakefile **/*.rake 2> /dev/null | head -n 1`
+    rakefile=`find . -maxdepth 1 -iname Rakefile`
+    if [ "$rakefile" != "" ]; then
+        recent=`ls -t .rake_tasks~ ${rakefile} **/*.rake 2> /dev/null | head -n 1`
         if [[ $recent != '.rake_tasks~' ]]; then
             rake --silent --prereqs | grep "rake" | cut -d " " -f 2 > .rake_tasks~
         fi
