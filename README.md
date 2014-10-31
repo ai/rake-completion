@@ -25,18 +25,25 @@ So it’s more faster, that default completion from Ubuntu rake.
    
         $ sudo apt-get install rake-completion
 
-### Mac
+### Mac + Homebrew
 
 Make sure you are running an up-to-date `bash` version (at least 4.3).
 
-Installing bash with [homebrew](http://brew.sh/) run:
+Installing bash and bash-completion with [homebrew](http://brew.sh/) run:
 
-    $ brew install bash
+    $ brew install bash bash-completion
+
+Then install this script:
+
+    $ curl -o /usr/local/etc/bash_completion.d/rake https://raw.githubusercontent.com/ai/rake-completion/master/rake
+
 
 ### Other UNIX-like
 
 #### System
 Copy `rake` script to `/etc/bash_completion.d/`.
+
+    $ wget -O /etc/bash_completion.d/rake https://raw.githubusercontent.com/ai/rake-completion/master/rake
 
 #### User
 Copy `rake` script (for example, to `~/scripts/`) and add to your `.bashrc`:
