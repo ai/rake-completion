@@ -52,7 +52,7 @@ Copy `rake` script (for example, to `~/scripts/`) and add to your `.bashrc`:
 
 ## Cache
 
-Tasks cache in `.rake_tasks~` will be update on changes in Rakefile or any
+Tasks cache in `.rake_tasks~` will be updated on changes in Rakefile or any
 `*.rake` files.
 
 To remove tasks cache (and another backup files) from Git repository add to
