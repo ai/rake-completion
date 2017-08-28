@@ -1,4 +1,4 @@
-# WARNING - this project is obsolete. 
+# Warning: this project is obsolete
 
 Updates and support are no longer provided. Feel free to improve it.
 
