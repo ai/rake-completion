@@ -1,3 +1,9 @@
+# WARNING - this project is obsolete. 
+
+Updates and support are no longer provided. Feel free to improve it.
+
+-----
+
 # Rake Completion
 
 Bash completion support for Rake, Ruby Make.
@@ -17,11 +23,14 @@ So it’s more faster, that default completion from Ubuntu rake.
 
 ### Ubuntu
 
-1. Add Ubuntu on Rails PPA:
+Obsolete: the package is no longer available at PPA.
+
+~~1. Add Ubuntu on Rails PPA:~~
    
         $ sudo add-apt-repository ppa:ubuntu-on-rails/ppa
-   
-2. Install `rake-completion` package:
+        $ sudo apt-get update
+        
+~~2. Install `rake-completion` package:~~
    
         $ sudo apt-get install rake-completion
 
@@ -41,11 +50,13 @@ Then install this script:
 ### Other UNIX-like
 
 #### System
+
 Copy `rake` script to `/etc/bash_completion.d/`.
 
     $ wget -O /etc/bash_completion.d/rake https://raw.githubusercontent.com/ai/rake-completion/master/rake
 
 #### User
+
 Copy `rake` script (for example, to `~/scripts/`) and add to your `.bashrc`:
 
     . ~/scripts/rake
