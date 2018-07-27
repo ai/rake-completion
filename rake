@@ -25,6 +25,8 @@ _rakecomplete() {
         # remove colon containing prefix from COMPREPLY items
         __ltrim_colon_completions "$cur"
         return 0
+    else
+      COMPREPLY=()
     fi
 }
 
