@@ -1,6 +1,8 @@
 #!/bin/bash
-# Run all tests and print results.
 
+[ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
+
+# Run all tests and print results.
 GOOD="\e[32m"
 BAD="\e[31m"
 CLEAR="\e[0m"
@@ -18,13 +20,20 @@ done
 for fresher in */fresher; do
     for file in `cat "$fresher"`; do
         touch "`dirname $fresher`/$file"
+        sleep 0.001
     done
 done
 
 for test in */; do
     cd $test
-    _rakecomplete
-    
+    if [ -d ./subdirectory ]; then
+        cd ./subdirectory
+        _rakecomplete
+        cd ..
+    else
+      _rakecomplete
+    fi
+
     if [ "`echo ${COMPREPLY[@]}`" = "`cat tasks`" ]; then
         echo -e "$GOOD* `cat description`$CLEAR"
     else
@@ -33,7 +42,7 @@ for test in */; do
         echo -e "       got: $BAD${COMPREPLY[@]}$CLEAR"
         let "fail += 1"
     fi
-    
+
     let "all += 1"
     cd ..
 done

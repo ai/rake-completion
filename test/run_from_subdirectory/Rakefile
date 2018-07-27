@@ -1,0 +1,2 @@
+desc "Task in subdirectory"
+task "subdirectory" do; end
