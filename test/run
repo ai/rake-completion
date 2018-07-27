@@ -26,7 +26,7 @@ done
 for test in */; do
     cd $test
     _rakecomplete
-    
+
     if [ "`echo ${COMPREPLY[@]}`" = "`cat tasks`" ]; then
         echo -e "$GOOD* `cat description`$CLEAR"
     else
@@ -35,7 +35,7 @@ for test in */; do
         echo -e "       got: $BAD${COMPREPLY[@]}$CLEAR"
         let "fail += 1"
     fi
-    
+
     let "all += 1"
     cd ..
 done
