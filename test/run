@@ -1,6 +1,8 @@
 #!/bin/bash
-# Run all tests and print results.
 
+[ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
+
+# Run all tests and print results.
 GOOD="\e[32m"
 BAD="\e[31m"
 CLEAR="\e[0m"
