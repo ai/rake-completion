@@ -18,7 +18,7 @@ _rakecomplete() {
 
     if [[ -f "$rakefile" ]]; then
         recent=`ls -t $seek_path/.rake_tasks~ ${rakefile} **/*.rake 2> /dev/null | head -n 1`
-        if [[ $recent != '.rake_tasks~' ]]; then
+        if [[ $recent != "$seek_path/.rake_tasks~" ]]; then
             rake --silent --prereqs | grep "rake" | cut -d " " -f 2 > $seek_path/.rake_tasks~
         fi
         COMPREPLY=($(compgen -W "`cat $seek_path/.rake_tasks~`" -- "$cur"))
