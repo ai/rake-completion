@@ -26,7 +26,13 @@ done
 
 for test in */; do
     cd $test
-    _rakecomplete
+    if [ -d ./subdirectory ]; then
+        cd ./subdirectory
+        _rakecomplete
+        cd ..
+    else
+      _rakecomplete
+    fi
 
     if [ "`echo ${COMPREPLY[@]}`" = "`cat tasks`" ]; then
         echo -e "$GOOD* `cat description`$CLEAR"
