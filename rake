@@ -12,7 +12,7 @@ _rakecomplete() {
     seek_path="."
     while true; do
         rakefile="${seek_path}/Rakefile"
-        [[ $(readlink -f $seek_path) == "/" || "$rakefile" != "" || -f "$rakefile" ]] && break
+        [[ $(readlink -f $seek_path) == "/" || -f "$rakefile" ]] && break
         seek_path="../${seek_path}"
     done
 
