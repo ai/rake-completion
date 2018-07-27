@@ -11,12 +11,12 @@ _rakecomplete() {
     rakefile=""
     seek_path="."
     while true; do
-        rakefile=`find ${seek_path} -maxdepth 1 -iname Rakefile`
-        [[ $(readlink -f $seek_path) != "/" && "$rakefile" == "" ]] || break
+        rakefile="${seek_path}/Rakefile"
+        [[ $(readlink -f $seek_path) == "/" || "$rakefile" != "" || -f "$rakefile" ]] && break
         seek_path="../${seek_path}"
     done
 
-    if [ "$rakefile" != "" ]; then
+    if [[ -f "$rakefile" ]]; then
         recent=`ls -t $seek_path/.rake_tasks~ ${rakefile} **/*.rake 2> /dev/null | head -n 1`
         if [[ $recent != '.rake_tasks~' ]]; then
             rake --silent --prereqs | grep "rake" | cut -d " " -f 2 > $seek_path/.rake_tasks~
