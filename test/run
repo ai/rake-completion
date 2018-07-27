@@ -20,6 +20,7 @@ done
 for fresher in */fresher; do
     for file in `cat "$fresher"`; do
         touch "`dirname $fresher`/$file"
+        sleep 0.001
     done
 done
 
